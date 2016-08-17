@@ -1,0 +1,15 @@
+<template name="OfferedRestaurants">
+	{{#each invite in invites}}
+		<div>
+			{{invite.inviter}}
+		</div>
+	{{/each}}
+
+	{{#each restaurant in restaurants}}
+		<div>
+			{{restaurant.name}}
+			<button type="button" class="btn_select" data-value="{{restaurant._id}}"> Add </button>
+		</div>
+	{{/each}}
+	<button class="btn_done">Done!</button>
+</template>
