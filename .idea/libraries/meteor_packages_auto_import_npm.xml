@@ -1527,6 +1527,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/index.js" />
         <item url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/parse-int.js" />
         <item url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/_.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/npm-bcrypt/0.8.6_3/npm/node_modules/bcrypt/bcrypt.js" />
         <item url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/set.js" />
         <item url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/weak-map.js" />
         <item url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/dict.js" />
@@ -5095,6 +5096,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/index.js" />
       <root url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/parse-int.js" />
       <root url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/_.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/npm-bcrypt/0.8.6_3/npm/node_modules/bcrypt/bcrypt.js" />
       <root url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/set.js" />
       <root url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/weak-map.js" />
       <root url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.9.0/npm/node_modules/core-js/library/fn/dict.js" />
