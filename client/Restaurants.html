@@ -1,7 +1,9 @@
 <template name="Restaurants">
 	{{#each restaurant in restaurants}}
-		<div>
+		<div class="restaurant">
+			<div>
 			{{restaurant.name}}
+			</div>
 			<button type="button" class="btn_add" data-value="{{restaurant._id}}"> Add </button>
 			<button type="button" class="btn_remove" data-value="{{restaurant._id}}"> Remove </button>
 		</div>
