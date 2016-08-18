@@ -1,19 +1,27 @@
 <template name="InviteList">
 	{{#if isAccpeted}}
-		<h2 class="notification"> Dinner has been confirmed! </h2>
+		{{#if isInviting}}
+			<h2 class="notification"> Dinner has been confirmed! </h2>
+			<button class="btn dinner-done">Start a new invite!</button>
+		{{else}}
+			<h2>so sorry, we are currently only able to process one dinner invite at a time. </h2>
+			<h5> Admiral, wouldn't it be easier to put an experienced crew back on the ship? </h5>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DeForest_Kelley,_Dr._McCoy,_Star_Trek.jpg"/>
+		{{/if}}
 	{{else}}
-		<h2 class="notification"> You are awaiting confirmation of dinner plans. </h2>
-		<h3 class="small_notification"> Here is what you selected </h3>
-	{{/if}}
-
-
-	{{#if isAccpeted}}
-		<button class="btn dinner-done">Start a new invite! </button>
-	{{else}}
-		{{#each restaurant in restaurants}}
-			<div class="restaurant name">
-				{{restaurant.name}}
-			</div>
-		{{/each}}
+		{{#if isInviting}}
+			<h2 class="notification"> You are awaiting confirmation of dinner plans. </h2>
+			<h3 class="small_notification"> Here is what you selected </h3>
+			{{#each restaurant in restaurants}}
+				<div class="restaurant name">
+					{{restaurant.name}}
+				</div>
+			{{/each}}
+		{{else}}
+			<h2>No dinner plans </h2> 
+			<h5>
+			<button class="btn narrow-down">Start narrowing down your search</button>
+		</h5>
+		{{/if}}
 	{{/if}}
 </template>

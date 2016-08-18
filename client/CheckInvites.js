@@ -1,14 +1,21 @@
-
-Template.CheckInvites.onCreated(function() {
+Template.CheckInvites.onCreated(function () {
 	this.subscribe("invites");
 });
 
 Template.CheckInvites.helpers({
-	hasInvite: function () {
+	isInviter: function () {
 		let currentUserId = Meteor.userId();
-		let invite = Invites.findOne({inviteeId: currentUserId});
-
-		return (invite);
+		let inviter = Invites.findOne({inviterID: currentUserId});
+		return (inviter);
+	},
+	isInvitee: function () {
+		let currentUserId = Meteor.userId();
+		let invitee = Invites.findOne({inviteeId: currentUserId});
+		return (invitee);
+	},
+	hasInvite: () => {
+		return Invites.find().count;
 	}
+
 });
 

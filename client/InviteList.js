@@ -13,6 +13,17 @@ Template.InviteList.helpers({
 	},
 	isAccpeted: ()=> {
 	     return Restaurants.find({isSelected: true}).count();
+	},
+	isInviting: ()=> {
+		let currentUserId = Meteor.userId();
+		let inviter = Invites.findOne({inviterID: currentUserId});
+
+		return (inviter);
+	},
+	isInvitee: function () {
+		let currentUserId = Meteor.userId();
+		let invitee = Invites.findOne({inviteeId: currentUserId});
+		return (invitee);
 	}
 
 });
@@ -34,6 +45,9 @@ Template.InviteList.events({
 
 		});
 		FlowRouter.go('/');
+	},
+		'click .narrow-down': function () {
+		FlowRouter.go('choose');
 	}
 
 });
