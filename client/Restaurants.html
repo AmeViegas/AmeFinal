@@ -1,12 +1,39 @@
 <template name="Restaurants">
+	<h2>Invite Someone to dinner!</h2>
+	<div class="dropdown">
+		 <select id="email-select">
+		<option disabled="disabled" selected="selected">Please Select</option>
+		{{#each user in users}}
+			{{#each email in user.emails}}
+
+				<option value="{{ user._id}}">
+					{{ email.address}}
+				</option>
+			 {{/each}}
+		{{/each}}
+	</select>
+	</div>
+
 	{{#each restaurant in restaurants}}
 		<div class="restaurant">
-			<div>
-			{{restaurant.name}}
+			<div class="restaurant name">
+				{{restaurant.name}}
 			</div>
-			<button type="button" class="btn_add" data-value="{{restaurant._id}}"> Add </button>
-			<button type="button" class="btn_remove" data-value="{{restaurant._id}}"> Remove </button>
+			<div class="restaurant address">
+				{{restaurant.address}}
+			</div>
+			<button type="button" class="btn_add" data-value="{{restaurant._id}}"> Eat Here!</button>
+
+			{{#if restaurant.isOffered}}
+				<button type="button" class="btn_remove" data-value="{{restaurant._id}}"> Nevermind</button>
+			{{/if}}
 		</div>
 	{{/each}}
-	<button class="btn_invite">Invite!</button>
+	{{#if hasInvite}}
+		<h5>
+			<button class="btn check-invite">You have a invite</button>
+		</h5>
+	{{else}}
+		<button class="btn_invite">Invite!</button>
+	{{/if}}
 </template>

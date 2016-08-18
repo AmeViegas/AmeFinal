@@ -15,7 +15,7 @@ RestaurantData = {
 			address: "1627 Dupont St, Toronto, ON, M6P 3S8",
 			phone: "416-561-9114",
 			url:"http://farmhousehospitality.tumblr.com/",
-			isOffered: true,
+			isOffered: false,
 			isSelected: false
 		}
 	]

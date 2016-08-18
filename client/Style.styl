@@ -29,12 +29,18 @@ $wide = 1200px
 
 // Colors
 black = #222
+//
 grey = #D8D8D8
+//Background
 light-grey = #EEE
-purp = #524763
-dark-purp = #373142
+//buttton txt
+creamy = #FFF
+//header
+seaGrn = #5CA4A9
+//sidebar
+blueGray = #9BC1BC
 red = #E54B4B
-teal = #82D8D8
+org = #ffb74d
 dark-teal = #66A6A6
 green = #CBE56C
 blue = #16528E
@@ -58,7 +64,6 @@ z = {
 }
 
 
-
 $side-nav = 100px
 $side-nav-large = 200px
 
@@ -73,8 +78,8 @@ body
   padding: 70px 0 150px
 
 header
-  color #FFF
-  background: purp
+  color creamy
+  background: seaGrn
   padding 20px
   fixed top left
   width 100%
@@ -89,7 +94,7 @@ header
   .login-buttons-dropdown-align-
     float right
     a
-      color #FFF
+      color creamy
       text-decoration none
 
 p
@@ -101,8 +106,8 @@ p
   margin-bottom 30px
 
 .billboard
-  background dark-purp
-  color #FFF
+  background blueGray
+  color creamy
   font-size 2em
   text-align center
   padding 60px
@@ -125,7 +130,7 @@ p
 
 .new-restaurant-container
   position relative
-  background #FFF
+  background creamy
   padding 20px
   margin-bottom 20px
   shadow-level(2)
@@ -143,12 +148,12 @@ p
 .btn, button
   display inline-block
   cursor pointer
-  background purp
-  color #FFF
+  background seaGrn
+  color creamy
   text-decoration none
   text-transform uppercase
   padding 5px 15px
-  border solid 3px purp
+  border solid 3px seaGrn
   border-radius 2px
   font-weight 800
   shadow-level(1)
@@ -158,9 +163,9 @@ p
     border-color @background
     shadow-level(2)
   &.btn-primary
-    background teal
-    border-color teal
-    color dark-purp
+    background seaGrn
+    border-color transparent
+    color creamy
     &:hover
       background @background - 40
       border-color @background
@@ -171,22 +176,22 @@ p
       background @background - 20
       border-color @background
   &.btn-text
-    color purp
+    color seaGrn
     background transparent
-    border solid 2px purp
+    border solid 2px seaGrn
     shadow-level(0)
     &:hover
-      background teal
+      background org
       border-color @background
       shadow-level(1)
   &.btn-text-dark
-    color #FFF
+    color creamy
     background transparent
-    border solid 2px #FFF
+    border solid 2px creamy
     shadow-level(0)
     &:hover
-      background #FFF
-      color dark-purp
+      background creamy
+      color blueGray
       border-color @background
       shadow-level(1)
   &.btn-confirmation
@@ -195,23 +200,23 @@ p
     border solid 2px @background
     &:hover
       background @background - 20
-      border-color dark-purp
+      border-color blueGray
   &.btn-cancel
-    color #FFF
+    color creamy
     background transparent
-    border solid 2px #FFF
+    border solid 2px creamy
     opacity 0.4
     shadow-level(-1)
     &:hover
       background red
-      color #FFF
+      color creamy
       opacity 1
       shadow-level(2)
       border-color @background
 
 input, select, textarea
-  color purp
-  background #FFF
+  color seaGrn
+  background creamy
   border solid 2px light-grey
   border-radius 2px
   font-weight 800
@@ -258,8 +263,8 @@ input, select, textarea
   height 100px
   width 100%
   overflow hidden
-  background dark-purp
-  color #FFF
+  background blueGray
+  color creamy
   z-index: z.header
   shadow-level(2)
   ul
@@ -269,14 +274,14 @@ input, select, textarea
     justify-content space-between
     list-style none
   a
-    color #FFF
+    color creamy
     text-decoration none
     padding 20px 20px
     display block
     text-align center
     trans()
     &:hover, &.active
-      background purp
+      background seaGrn
   i
     display block
     font-size 2em
@@ -293,33 +298,29 @@ input, select, textarea
     a
       padding 20px 10px
       &:hover, &.active
-        border-left 4px solid teal
+        border-left 4px solid org
   +above($large)
     width $side-nav-large
     a
       padding 20px 20px
       &:hover, &.active
-        border-left 10px solid teal
+        border-left 10px solid org
 
 .restaurant
-  background #FFF
+  background creamy
   padding 0 20px 20px
   margin-bottom 20px
   position relative
   z-index 1
   shadow-level(1)
   trans()
-  .remove-from-menu
-    display none
+  .btn-primary, .btn-deny
+    display block
   &.in-menu
-    background teal
-    color #FFF
+    background org
+    color creamy
     h3
       border-bottom: rgba(255,255,255, 0.6) solid 3px
-    .add-to-menu
-      display none
-    .remove-from-menu
-      display block
   h3
     font-size: 3em;
     opacity: 0.3;
@@ -328,27 +329,14 @@ input, select, textarea
     margin-bottom 10px
   button
     margin-top 20px
-  .fa-trash
-    opacity 0.3
-    cursor pointer
-    position absolute
-    top 0
-    right 0
-    font-size 1.6em
-    display block
-    padding 20px
-    color black
-    trans()
-    &:hover
-      color red
-      opacity 0.6
-  .ingredient
-    display inline-block
+  .name
     margin-right 10px
     font-size 1.2em
-  &:hover
-    shadow-level(3)
-// animation card 0.6s ease 1 forwards
+    shadow-level (0)
+  .address
+     margin-right 10px
+     shadow-level (0)
+   //animation card 0.6s ease 1 forwards
 
 @keyframes card
   0%
@@ -363,24 +351,26 @@ input, select, textarea
     transform translate3d(0, 0, 0)
 
 
-.menu-item
+.restaurant.item
   @extend .restaurant
+  padding 20px
 
-//.shopping-list
-//  @extend .recipe
-//  padding 50px 5%
-//  list-style none
-//  li
-//    font-size 2em
-//    padding 20px
-//    border-bottom 1px solid light-grey
-//    border-top 1px solid light-grey
-//    & + li
-//      border-top none
+
 
 .login-buttons-dropdown-align-
   #login-dropdown-list
     right 0
     left auto
     a
-      color dark-purp
+      color blueGray
+
+.restaurant_name
+  margin-top 20px
+
+.small_notification
+  text-align center
+  font-size medium
+
+.notification
+  text-align center
+  font-size 1.5em

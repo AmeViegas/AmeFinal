@@ -2,8 +2,20 @@
 <template name="HomePage">
 
 	<main class="billboard">
-		<h2>hello</h2>
-	</main>
+		<h2 > Welcome </h2>
+		<h3>You have {{numRestaurants}} restaurants nearby.</h3>
 
+	{{#if currentUser}}
+		<h5>
+			<button class="btn narrow-down">Start narrowing down your search</button>
+		</h5>
+		<h5>
+			<button class="btn check-invite">See if you have invites</button>
+		</h5>
+	{{else}}
+		<h6> Log In!  </h6>
+	{{/if}}
+
+	</main>
 
 </template>
