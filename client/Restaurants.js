@@ -17,6 +17,12 @@ Template.Restaurants.helpers({
 	},
 	hasInvite: function (){
 			return Invites.find({}).count();
+	},
+	isInviter: function () {
+		let currentUserId = Meteor.userId();
+		let inviter = Invites.findOne({inviterID: currentUserId});
+
+		return (inviter);
 	}
 
 

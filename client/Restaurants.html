@@ -1,5 +1,15 @@
 <template name="Restaurants">
+  {{#if isInviter}}
+  <h2> You have already invited someone for dinner </h2>
+    <h5>
+			<button class="btn check-invite">See if they accepted</button>
+		</h5>
+
+  {{else}}
 	<h2>Invite Someone to dinner!</h2>
+	{{#if hasInvite}}
+	 
+	{{else}}
 	<div class="dropdown">
 		 <select id="email-select">
 		<option disabled="disabled" selected="selected">Please Select</option>
@@ -13,7 +23,7 @@
 		{{/each}}
 	</select>
 	</div>
-
+  {{/if}}
 	{{#each restaurant in restaurants}}
 		<div class="restaurant">
 			<div class="restaurant name">
@@ -22,18 +32,25 @@
 			<div class="restaurant address">
 				{{restaurant.address}}
 			</div>
+
+		{{#if hasInvite}}
+			<p>currently awaiting decision</p>
+		{{else}}
 			<button type="button" class="btn_add" data-value="{{restaurant._id}}"> Eat Here!</button>
 
 			{{#if restaurant.isOffered}}
 				<button type="button" class="btn_remove" data-value="{{restaurant._id}}"> Nevermind</button>
 			{{/if}}
+		{{/if}}
 		</div>
+
 	{{/each}}
 	{{#if hasInvite}}
 		<h5>
-			<button class="btn check-invite">You have a invite</button>
+			<button class="btn check-invite">You may have a invite</button>
 		</h5>
 	{{else}}
 		<button class="btn_invite">Invite!</button>
+	{{/if}}
 	{{/if}}
 </template>

@@ -1,7 +1,10 @@
 
 <template name="OfferedRestaurants">
+{{#if isAccpeted}}
+		<h2 class="notification"> Dinner has been confirmed! </h2>
+{{else}}
 	<h2>
-		<div >
+		<div class="notification">
 			{{#each invite in invites}}
 
 				{{invite.inviterEmail}}
@@ -10,6 +13,9 @@
 			has invited you to dinner! Lucky you.
 		</div>
 	</h2>
+{{/if}}
+
+
 
 	<h3 class="small_notification">Please select a restaurant. </h3>
 
@@ -21,9 +27,14 @@
 			<div class="restaurant address">
 				{{restaurant.address}}
 			</div>
+		{{#if isAccpeted}}
+				<button class="btn dinner-done">Start a new invite! </button>
+		{{else}}
 			<button type="button" class="btn_select" data-value="{{restaurant._id}}"> eat Here!</button>
-
+		{{/if}}
 		</div>
 	{{/each}}
+
+
 </template>
 

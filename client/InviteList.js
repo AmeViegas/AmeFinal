@@ -13,6 +13,12 @@ Template.InviteList.helpers({
 	},
 	isAccpeted: ()=> {
 	     return Restaurants.find({isSelected: true}).count();
+	},
+	isInviting: ()=> {
+		let currentUserId = Meteor.userId();
+		let inviter = Invites.findOne({inviterID: currentUserId});
+
+		return (inviter);
 	}
 
 });

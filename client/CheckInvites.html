@@ -1,7 +1,11 @@
 <template name="CheckInvites">
 	{{#if hasInvite}}
-		{{> OfferedRestaurants}}
+		{{#if isInvitee}}
+			{{> OfferedRestaurants}}
+		{{else}}
+			{{> InviteList}}
+		{{/if}}
 	{{else}}
-		{{> CheckIfInviting}}
+       <h2>what the heck?</h2>
 	{{/if}}
 </template>
