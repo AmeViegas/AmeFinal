@@ -18,17 +18,18 @@ es5-shim@4.6.13                # ECMAScript 5 compatibility for older browsers.
 ecmascript@0.5.7              # Enable ECMAScript2015+ syntax in app code
 
 #this is used for dev to allow for ease of testing and usage
-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
+#autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
 
 #routing, layout, DB, forms and img
 kadira:flow-router
 kadira:blaze-layout
-aldeed:collection2
-check
-meteortoys:allthings
-aldeed:autoform
-fortawesome:fontawesome
 stolinski:stylus-multi
+fortawesome:fontawesome
+aldeed:collection2
+aldeed:autoform
 accounts-ui
 accounts-password
+meteortoys:allthings
+check
+

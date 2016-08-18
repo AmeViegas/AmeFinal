@@ -1,0 +1,12 @@
+<template name="SideNav">
+	{{#if currentUser}}
+	<nav class="side-nav">
+		<ul>
+			<li><a href="/add"><i class="fa fa-list"></i>Add Resturant</a></li>
+			<li><a href="/choose"><i class="fa fa-map-o"></i>Choose Restaurant</a></li>
+
+			<li><a href="/invites"><i class="fa fa-thumbs-o-up"></i>Dinner Plans!</a></li>
+		</ul>
+	</nav>
+	{{/if}}
+</template>

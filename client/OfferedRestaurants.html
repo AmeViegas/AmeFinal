@@ -1,17 +1,29 @@
 
 <template name="OfferedRestaurants">
-	{{#each invite in invites}}
+	<h2>
 		<div >
-			{{invite.inviter}}
+			{{#each invite in invites}}
+
+				{{invite.inviterEmail}}
+
+			{{/each}}
+			has invited you to dinner! Lucky you.
 		</div>
-	{{/each}}
+	</h2>
+
+	<h3 class="small_notification">Please select a restaurant. </h3>
 
 	{{#each restaurant in restaurants}}
-		<div  class="restaurant">
-			{{restaurant.name}}
-			<button type="button" class="btn_select" data-value="{{restaurant._id}}"> Add </button>
+		<div class="restaurant">
+			<div class="restaurant name">
+				{{restaurant.name}}
+			</div>
+			<div class="restaurant address">
+				{{restaurant.address}}
+			</div>
+			<button type="button" class="btn_select" data-value="{{restaurant._id}}"> eat Here!</button>
+
 		</div>
 	{{/each}}
-	<button class="btn_done">Done!</button>
 </template>
 

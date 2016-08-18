@@ -1,0 +1,19 @@
+<template name="InviteList">
+	{{#if isAccpeted}}
+		<h2 class="notification"> Dinner has been confirmed! </h2>
+	{{else}}
+		<h2 class="notification"> You are awaiting confirmation of dinner plans. </h2>
+		<h3 class="small_notification"> Here is what you selected </h3>
+	{{/if}}
+
+
+	{{#if isAccpeted}}
+		<button class="btn dinner-done">Start a new invite! </button>
+	{{else}}
+		{{#each restaurant in restaurants}}
+			<div class="restaurant name">
+				{{restaurant.name}}
+			</div>
+		{{/each}}
+	{{/if}}
+</template>
