@@ -47,6 +47,14 @@ Template.OfferedRestaurants.events({
 			console.log("something went wrong with setting button id");
 		}
 
+	},
+	'click .dinner-done': function () {
+		Meteor.call('dinnerDone', function (err, result) {
+			if (err) {
+				alert(err)
+			}
+
+		});
 	}
 
 });

@@ -16,7 +16,9 @@
 {{/if}}
 
 
-
+	{{#if isAccpeted}}
+<button class="btn dinner-done">Start a new invite! </button>
+		{{else}}
 	<h3 class="small_notification">Please select a restaurant. </h3>
 
 	{{#each restaurant in restaurants}}
@@ -27,14 +29,12 @@
 			<div class="restaurant address">
 				{{restaurant.address}}
 			</div>
-		{{#if isAccpeted}}
-				<button class="btn dinner-done">Start a new invite! </button>
-		{{else}}
+	
 			<button type="button" class="btn_select" data-value="{{restaurant._id}}"> eat Here!</button>
-		{{/if}}
+		
 		</div>
 	{{/each}}
-
+ {{/if}}
 
 </template>
 

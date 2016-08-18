@@ -19,6 +19,11 @@ Template.InviteList.helpers({
 		let inviter = Invites.findOne({inviterID: currentUserId});
 
 		return (inviter);
+	},
+	isInvitee: function () {
+		let currentUserId = Meteor.userId();
+		let invitee = Invites.findOne({inviteeId: currentUserId});
+		return (invitee);
 	}
 
 });
@@ -40,6 +45,9 @@ Template.InviteList.events({
 
 		});
 		FlowRouter.go('/');
+	},
+		'click .narrow-down': function () {
+		FlowRouter.go('choose');
 	}
 
 });
